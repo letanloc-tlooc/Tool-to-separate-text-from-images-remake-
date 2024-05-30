@@ -1,0 +1,7 @@
+‘When you are doing a SELECT with a JOIN across multiple tables with identical column names, how do you
+distinguish the column names?
+A. tablename/columnname
+B. tablename.columnname
+C. tablename->columnname
+D.
+. tablenamef['columnname']

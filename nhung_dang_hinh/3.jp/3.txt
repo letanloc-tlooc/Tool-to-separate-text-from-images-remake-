@@ -1,0 +1,11 @@
+The table R(X.Y) currently has the following tuples (note there are
+duplicates).The relation S(A.B,C) has the following tuples
+(See picture)
+Which is the result when we execute the following query
+SELECT * FROMR
+UNION
+SELECT * FROMS:
+A. The output has 16 rows
+B. There is an error
+C. The output has 17 rows
+D. The output has 15 rows

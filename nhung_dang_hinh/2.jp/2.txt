@@ -1,0 +1,5 @@
+Which type of requirement specifies a behavior or action that the system must exhibit?
+A. Business requirement
+B. Non-functional requirement
+C. Functional requirement
+D. Stakeholder requirement

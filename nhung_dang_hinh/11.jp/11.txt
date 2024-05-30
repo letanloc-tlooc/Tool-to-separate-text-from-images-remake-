@@ -1,0 +1,1 @@
+What is the result of the breadth first traverse of the binary search tree T, after inserting the into the tree sequentially (suppose T is empty before insertion) 15, 7, 3, 0, 12, 20, 17  A. 15, 7, 20, 3, 12,0, 17 B. 15, 7,20, 3, 12, 17,0 C. 15,7, 20, 3, 17, 12,0 D  15, 7, 20, 3, 17, 0,12
