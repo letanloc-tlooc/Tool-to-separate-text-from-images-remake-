@@ -11,7 +11,7 @@ from langdetect import detect, detect_langs
 from PIL import Image
 import numpy as np
 import os
-# Đặt đường dẫn tới Tesseract executable (nếu cần thiết, chỉ áp dụng cho Windows)
+# Đặt đường dẫn tới Tesseract executable
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 def detect_language(text):
@@ -118,7 +118,7 @@ def extract_text_from_image(image_path, target_chars='ABCD'):
 def format_text(detected_text):
     string = ''.join(detected_text) #Chuyển sang string
     ban_list = ['(Choose 1 answer)\n',"|","(Choose 1 answer)"] #List ký tự cần xóa
-    answer_list = ['\nA','\nB','\nC','\nD'] #List đáp án
+    answer_list = ['\nA)','\nB)','\nC)','\nD)'] #List đáp án
 
     for char in ban_list:
         if char in string:
@@ -133,7 +133,20 @@ def format_text(detected_text):
     if '\n\n' in string:
         string = string.replace('\n\n','\n') #Tránh cách 2 dòng
 
-    return string.strip()
+    if 'A.' in string:
+        string = string.replace('A.','A) ')
+        
+    if 'B.' in string:
+        string = string.replace('B.','B) ')
+    
+    if 'C.' in string:
+        string = string.replace('C.','C) ')
+        
+    if 'D.' in string:
+        string = string.replace('D.','D) ')
+    st=string+"\nANSWER A."
+    
+    return st.strip()
 
 # Hàm xuất file txt
 def write_txt(path,text):
@@ -178,7 +191,7 @@ def run_files(folder_path):
 ############## Main ################  
 
 #Đọc folder
-directory_path = "nhung_dang_hinh" 
+directory_path = "processed_images" 
 read_folders(directory_path)
 
 
